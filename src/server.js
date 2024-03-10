@@ -6,12 +6,7 @@ dotenv.config({
 }); // Path of dotenv should be relative  to the project folder path not the server.js
 const PORT = process.env.PORT || 4000;
 
-connectDB()
-  .then(() => {
-    app.listen(PORT, () => {
-      console.log("Server is running at port:", PORT);
-    });
-  })
-  .catch((err) => {
-    console.log("Something went wrong while connecting mongo db");
-  });
+connectDB();
+app.listen(PORT, () => {
+  console.log("Server is running at port:", PORT);
+});
